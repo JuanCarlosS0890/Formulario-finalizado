@@ -3,7 +3,7 @@ var usuarios = [];
 var arraygraficado = [];
 var graficatabla = function(){
     arraygraficado = JSON.parse(localStorage.getItem('users'))
-    users = arraygraficado
+    usuarios = arraygraficado
     document.getElementById('datos').innerHTML = ''
     for (let a = 0; a < arraygraficado.length; a++) {
         document.getElementById('datos').innerHTML += '<tr><td>'+ arraygraficado[a].nombre +'</td><td>'
@@ -12,12 +12,12 @@ var graficatabla = function(){
     }}
 var eliminacion = function(listado){
     usuarios.splice(listado,1)
-    localStorage.setItem('users', JSON.stringify(usuarios))
+    localStorage.setItem('users',JSON.stringify(usuarios))
+   
     graficatabla()}
 var iniciado = function(){
-    arraygraficado = JSON.parse(localStorage.getItem('users'))
     graficatabla()}
-iniciado()
+    iniciado()
 var almacenar = function(){
     var nombre = document.getElementById('nombres').value
     var apellido = document.getElementById('apellidos').value
